@@ -48,6 +48,7 @@
 // }
 //input a list
 import {useState} from 'react';
+import Blogs from './blogs';
 
 function Home(){
     let [blogs,setBlogs]=useState([
@@ -57,13 +58,8 @@ function Home(){
     ]);
     return(
         <div className="Home">
-            <h1>Home</h1>
-            {blogs.map((blog)=>(
-                   <div className="preview" key={blog.id}>
-                    <h1>{blog.title}</h1>
-                    <p>{blog.author}</p>
-                   </div>
-            ))}
+          <Blogs blogs={blogs} title="All Blogs"/>
+          <Blogs blogs={blogs.filter((blog)=>blog.author==="mehak")} title="Mehak blogs"/>
         </div>
            
     )
