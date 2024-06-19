@@ -20,5 +20,27 @@ const page=()=>{
   
          </>
 }
+//two way binding
+"use client"
+import React from "react";
+import { useState } from "react";
+
+
+let page=()=>{
+const [name,setname]=useState("");
+  return <>
+     <form>
+      <h1 className="font-bold text-center">Form</h1>
+      <input value={name} onChange={(e)=>{
+        setname(e.target.value)
+        console.log(e.target.value)
+
+      }}
+      type="text" placeholder="Enter your name" className="border-2 border-slate-200"></input>
+     </form>
+      </>
+}
+
+export default page
 
 export default page
